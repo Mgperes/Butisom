@@ -1,69 +1,56 @@
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
---bg:#fff;--alt:#f3f5f9;--text:#141a2b;--muted:#566079;--line:#dde2ec;--card:#fff;--red:#b3191e;--green:#1e6b1a;--blue:#17317a;--navy:#10245c;--btn:#17317a;--btn-t:#fff;--foot:#0f1a3d}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1424;--alt:#131b30;--text:#eef1f8;--muted:#a2adc6;--line:#27314b;--card:#171f36;--btn:#3b64d1;--foot:#090e1c}}
-:root[data-theme="dark"]{--bg:#0e1424;--alt:#131b30;--text:#eef1f8;--muted:#a2adc6;--line:#27314b;--card:#171f36;--btn:#3b64d1;--foot:#090e1c}
-html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
-*,*::before,*::after{box-sizing:inherit}
-body{margin:0;background:var(--bg);color:var(--text);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
-h1,h2,h3{line-height:1.15;margin:0 0 .5em;letter-spacing:-.015em}
-a{color:inherit}
-.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;padding:10px 16px 0;background:transparent;border-bottom:0}
-header::before{content:"";display:none}
-header .glass{max-width:1060px;margin:0 auto;padding:0 20px;height:62px;display:flex;align-items:center;justify-content:space-between;overflow:hidden;border:1px solid rgba(255,255,255,.16);border-radius:18px;background:rgba(16,36,92,.78);box-shadow:0 12px 32px rgba(16,36,92,.18);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-.brand{font-weight:800;text-decoration:none;font-size:1.1rem;letter-spacing:.01em}
-.brand-logo{display:block;width:auto;max-width:200px;height:48px;object-fit:contain}
-nav{display:flex;gap:24px;align-items:center;font-size:.94rem}
-nav a:not(.btn){padding:8px 10px;border:1px solid transparent;border-radius:999px;text-decoration:none;color:#eef1f8;transition:background .2s,border-color .2s}
-nav a:not(.btn):hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.18);color:#fff}
-.theme-toggle{display:grid;place-items:center;width:38px;height:38px;padding:0;border:1px solid rgba(255,255,255,.35);border-radius:50%;background:rgba(255,255,255,.08);color:#fff;font:700 20px/1 system-ui;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
-.theme-toggle:hover{background:rgba(255,255,255,.16);border-color:#fff;transform:translateY(-1px)}
-.theme-toggle:focus-visible{outline:3px solid #fff;outline-offset:2px}
-.btn{display:inline-block;background:var(--btn);color:var(--btn-t);padding:13px 26px;border-radius:6px;font:inherit;font-weight:700;text-decoration:none;border:0;cursor:pointer;transition:filter .2s,transform .2s}
-.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}
-.btn.wa,.btn.sm.wa{background:#1e6b1a;color:#fff}
-.btn.sm{padding:9px 18px;font-size:.9rem;border-radius:999px}
-.btn.ghost{background:transparent;color:var(--text);border:1.5px solid var(--line)}
-.hero{display:grid;gap:44px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:center;padding:68px 20px}
-.tag{display:inline-block;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:16px;color:var(--red);border-left:4px solid var(--red);padding-left:10px}
-h1{font-size:clamp(2.1rem,5vw,3.4rem)}
-h1 em{font-style:normal;color:var(--blue)}
-@media (prefers-color-scheme:dark){h1 em{color:#7fa0ff}}
-.hero p{color:var(--muted);font-size:1.12rem;max-width:50ch}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.logo-card{padding:24px;background:var(--navy);border:1px solid var(--blue);border-radius:10px;box-shadow:0 14px 40px rgba(16,36,92,.12)}
-.logo-card img{display:block;width:100%;height:auto}
-.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-.badges span{padding:6px 12px;font-size:.84rem;font-weight:600;border:1px solid var(--line);border-radius:4px;background:var(--card)}
-section{padding:64px 0}
-section.alt{background:var(--alt);border-block:1px solid var(--line)}
-section h2{font-size:clamp(1.6rem,3.6vw,2.3rem)}
-.lead{color:var(--muted);max-width:58ch;margin-bottom:30px}
-.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:8px;padding:24px;transition:transform .25s,box-shadow .25s}
-.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(16,36,92,.12)}
-.card:nth-child(3n+1){border-top-color:var(--red)}
-.card:nth-child(3n+2){border-top-color:var(--green)}
-.card .ic{display:none}
-.card h3{font-size:1.15rem}
-.card p{margin:0;color:var(--muted);font-size:.97rem}
-.split{display:grid;gap:36px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:center}
-.split img{width:100%;height:auto;border-radius:8px;display:block;border:1px solid var(--line)}
-.steps{counter-reset:s}
-.steps .card::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;margin-bottom:12px}
-.contact{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:34px;display:grid;gap:34px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.map{grid-column:1/-1;overflow:hidden;border:1px solid var(--line);border-radius:8px}
-.map iframe{display:block;width:100%;height:360px;border:0}
-.info p{margin:0 0 14px}
-.info small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-size:.72rem}
-.big{font-size:1.5rem;font-weight:800;text-decoration:none;color:var(--blue)}
-@media (prefers-color-scheme:dark){.big{color:#7fa0ff}}
-form{display:grid;gap:12px}
-input,select,textarea{font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px;width:100%}
-footer{padding:30px 0;color:#c9d1e6;background:var(--foot);font-size:.9rem;text-align:center}
-.todo{background:#fff3bf;color:#5c4b00;padding:0 4px;border-radius:3px}
-.fixwa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:6;box-shadow:0 6px 18px rgba(0,0,0,.25)}
-.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
-.rv.in{opacity:1;transform:none}
-@media(max-width:640px){header{padding:8px 10px 0}header .glass{padding:0 12px;height:58px;border-radius:14px}nav{gap:6px}nav a:not(.btn){display:none}.brand-logo{max-width:155px;height:44px}.hero{padding-top:40px}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+/* Estilos base inspirados na precisão tipográfica e fluidez da Apple */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #FFFFFF;
+      color: #1D1D1F;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Glassmorphism Navbar */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    /* Linha assinatura RGB Butisom */
+    .rgb-line {
+      background: linear-gradient(90deg, #E61919 0%, #007A1F 50%, #141066 100%);
+    }
+
+    /* Sombra suave estilo Apple */
+    .apple-shadow {
+      box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    .apple-card-hover {
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .apple-card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.09);
+    }
+
+    /* Animação Reveal no Scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Animação sutil nas ondas de áudio */
+    @keyframes pulseBar {
+      0%, 100% { transform: scaleY(0.35); }
+      50% { transform: scaleY(1); }
+    }
+    .audio-bar {
+      transform-origin: bottom;
+      animation: pulseBar 1.4s ease-in-out infinite;
+    }

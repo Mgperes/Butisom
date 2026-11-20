@@ -1,86 +1,760 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Butisom Eletrônica — Assistência técnica autorizada</title>
-<meta name="description" content="Conserto de TVs LED e LCD, micro-ondas, áudio e vídeo. Assistência autorizada Philco e CCE.">
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Butisom Eletrônica — Assistência Técnica de TV, Áudio e Vendas</title>
+  <meta name="description" content="Assistência técnica especializada em TVs Smart, LED, 4K, QLED, OLED e sistemas de áudio na Butisom Eletrônica. Diagnóstico transparente, garantia e aparelhos revisados à venda." />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
 
+    <script src="js/tailwind.config.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="selection:bg-[#141066] selection:text-white">
 
-<header><div class="glass">
-<a class="brand" href="#topo" aria-label="Butisom Eletrônica">
-<img class="brand-logo" src="imagens/logobutisom.png" alt="Butisom Eletrônica">
-</a>
-<nav><a href="#servicos">Serviços</a><a href="#loja">A loja</a><a href="#contato">Contato</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Ativar modo escuro" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span></button><a class="btn sm wa" data-wa href="#contato">Chamar</a></nav>
-</div></header>
+  <!-- Barra de Navegação Fixa (Glassmorphism) -->
+  <header class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all">
+    <!-- Linha ultrafina RGB no topo -->
+    <div class="h-[2.5px] w-full rgb-line"></div>
+    
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo Oficial Recriada em SVG Nítido -->
+      <a href="#inicio" class="flex items-center group focus:outline-none" aria-label="Butisom Eletrônica Início">
+        <svg class="h-10 sm:h-11 w-auto transition-transform duration-300 group-hover:scale-[1.02]" viewBox="0 0 330 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Moldura externa inclinada característica da logo -->
+          <path d="M26 12 H316 C322 12 325 17 322 23 L304 75 C302 80 297 82 291 82 H14 C8 82 5 77 8 71 L20 20 C21 15 23 12 26 12 Z" fill="#FFFFFF" stroke="#1D1D1F" stroke-width="1.5" stroke-opacity="0.25"/>
+          
+          <!-- Três lâminas inclinadas RGB (Vermelho, Verde, Azul Profundo) -->
+          <path d="M24 31 C24 27 27 24 31 22 L49 14 C52 13 54 15 54 18 L54 67 C54 70 52 72 49 73 L31 79 C27 80 24 78 24 74 Z" fill="#E61919"/>
+          <path d="M42 33 C42 29 45 26 49 24 L67 16 C70 15 72 17 72 20 L72 69 C72 72 70 74 67 75 L49 81 C45 82 42 80 42 76 Z" fill="#007A1F"/>
+          <path d="M60 35 C60 31 63 28 67 26 L85 18 C88 17 90 19 90 22 L90 71 C90 74 88 76 85 77 L67 83 C63 84 60 82 60 78 Z" fill="#141066"/>
+          
+          <!-- Texto Principal BUTISOM -->
+          <text x="98" y="55" fill="#1D1D1F" font-family="Inter, sans-serif" font-weight="800" font-size="35" letter-spacing="-1.5">BUTISOM</text>
+          
+          <!-- Subtítulo cursivo Eletrônica em vermelho -->
+          <text x="196" y="74" fill="#E61919" font-family="'Playfair Display', Georgia, serif" font-style="italic" font-weight="600" font-size="18.5" letter-spacing="0.2">Eletrônica</text>
+        </svg>
+      </a>
 
-<main id="topo">
-<div class="wrap hero">
-<div class="rv">
-<span class="tag">Assistência técnica autorizada</span>
-<h1>Assistência técnica <em>autorizada</em> em TVs, micro-ondas e áudio.</h1>
-<p>Consertos em TVs LED e LCD, micro-ondas, áudio e vídeo. Loja tradicional, com atendimento direto e orçamento antes do serviço.</p>
-<div class="cta"><a class="btn wa" data-wa href="#contato">Nos chame no WhatsApp</a><a class="btn ghost" href="#servicos">Ver serviços</a></div>
-<div class="badges"><span>Autorizada Philco</span><span>Autorizada CCE</span><span>Venda de peças e acessórios</span></div>
-</div>
-<div class="rv"><div class="logo-card"><img alt="Butisom Eletrônica" src="imagens/logobutisom.png"></div></div>
-</div>
+      <!-- Links Desktop -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs font-medium text-[#1D1D1F]/80">
+        <a href="#servicos" class="hover:text-[#1D1D1F] transition-colors">Conserto de TV</a>
+        <a href="#servicos" class="hover:text-[#1D1D1F] transition-colors">Sistemas de Áudio</a>
+        <a href="#como-funciona" class="hover:text-[#1D1D1F] transition-colors">Como Funciona</a>
+        <a href="#vendas" class="hover:text-[#1D1D1F] transition-colors">Aparelhos à Venda</a>
+        <a href="#localizacao" class="hover:text-[#1D1D1F] transition-colors">Localização</a>
+      </nav>
 
-<section id="servicos"><div class="wrap">
-<div class="rv"><h2>O que consertamos</h2><p class="lead">Eletrônica de áudio, vídeo e cozinha, feita por quem entende do assunto.</p></div>
-<div class="grid">
-<div class="card rv"><div class="ic">📺</div><h3>TVs LED e LCD</h3><p>Sem imagem, tela escura, sem som, não liga ou com defeito na fonte e nas placas.</p></div>
-<div class="card rv"><div class="ic">♨️</div><h3>Micro-ondas</h3><p>Não liga, não aquece ou painel com defeito, com todo o cuidado de segurança.</p></div>
-<div class="card rv"><div class="ic">🔊</div><h3>Áudio e vídeo</h3><p>Aparelhos de som e equipamentos de áudio e vídeo, dos antigos aos atuais.</p></div>
-<div class="card rv"><div class="ic">✅</div><h3>Serviço autorizado</h3><p>Assistência autorizada de marcas como Philco e CCE, além de peças e acessórios.</p></div>
-</div></div></section>
+      <!-- CTA Principal Header + Menu Mobile -->
+      <div class="flex items-center gap-3">
+        <a href="#orcamento" class="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs font-semibold bg-[#1D1D1F] text-white hover:bg-[#141066] transition-all shadow-sm">
+          Pedir Orçamento
+        </a>
 
-<section id="loja" class="alt"><div class="wrap split">
-<div class="rv"><h2>Tradição e atendimento de perto</h2><p class="lead" style="margin:0">A Butisom está no ramo há muitos anos e continua atendendo de perto: você explica o problema, recebe o diagnóstico e aprova o orçamento antes do conserto.</p></div>
-<div class="rv"><img alt="Fachada da Butisom Eletrônica" src="imagens/fachada.jpg"></div>
-</div></section>
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-full text-[#1D1D1F] hover:bg-[#F5F5F7] focus:outline-none" aria-label="Abrir Menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 17h16"/>
+            <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
 
-<section><div class="wrap">
-<div class="rv"><h2>Como funciona</h2><p class="lead">Simples e sem surpresa no final.</p></div>
-<div class="grid steps">
-<div class="card rv"><h3>Conte o defeito</h3><p>Chame no WhatsApp ou traga o aparelho até a loja.</p></div>
-<div class="card rv"><h3>Receba o orçamento</h3><p>Diagnóstico claro, com valor combinado antes de começar.</p></div>
-<div class="card rv"><h3>Retire pronto</h3><p>Aprovado o orçamento, consertamos e avisamos você.</p></div>
-</div></div></section>
+    <!-- Menu Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-b border-black/5 px-6 pt-2 pb-6 space-y-3">
+      <a href="#servicos" class="mobile-link block py-2 text-base font-medium text-[#1D1D1F]">Conserto de TV</a>
+      <a href="#servicos" class="mobile-link block py-2 text-base font-medium text-[#1D1D1F]">Sistemas de Áudio</a>
+      <a href="#como-funciona" class="mobile-link block py-2 text-base font-medium text-[#1D1D1F]">Como Funciona</a>
+      <a href="#vendas" class="mobile-link block py-2 text-base font-medium text-[#1D1D1F]">Aparelhos à Venda</a>
+      <a href="#localizacao" class="mobile-link block py-2 text-base font-medium text-[#1D1D1F]">Onde Estamos</a>
+    </div>
+  </header>
 
-<section id="contato"><div class="wrap">
-<div class="contact rv">
-<div class="info">
-<h2>Nos chame</h2>
-<p><small>WhatsApp / Telefone</small><a class="big" data-wa href="#contato">(53) 98124-1499</a></p>
-<p><small>Endereço</small><span id="i-end">R. Gen. Neto, 495 - Centro, Rio Grande - RS, 96200-010</span></p>
-<p><small>Horário</small><span id="i-hor">Segunda a sexta: 9h às 12h e 13h30 às 18h</span></p>
-<p><small>Site</small>butisom.com.br</p>
-<p><a href="https://www.facebook.com/eletrbutisom/" target="_blank" rel="noopener">Facebook: @eletrbutisom</a></p>
-</div>
-<form id="f">
-<select id="f-ap" aria-label="Aparelho"><option>TV LED/LCD</option><option>Micro-ondas</option><option>Áudio e vídeo</option><option>Outro</option></select>
-<input id="f-nm" placeholder="Seu nome" aria-label="Seu nome">
-<textarea id="f-df" rows="4" placeholder="Qual é o defeito? Marca e modelo ajudam." aria-label="Defeito"></textarea>
-<button class="btn" type="submit">Enviar pelo WhatsApp</button>
-</form>
-<div class="map rv">
-<iframe
-title="Localização da Butisom Eletrônica no Google Maps"
-src="https://www.google.com/maps?q=-32.0376625,-52.0990944&z=17&output=embed"
-loading="lazy"
-referrerpolicy="no-referrer-when-downgrade"
-allowfullscreen></iframe>
-</div>
-</div></div></section>
-</main>
+  <main id="inicio" class="pt-24 sm:pt-32">
 
-<footer>© <span id="y"></span> Butisom Eletrônica — Assistência técnica em TVs, micro-ondas, áudio e vídeo.</footer>
-<a class="btn wa fixwa" data-wa href="#contato" aria-label="WhatsApp">WhatsApp</a>
+    <!-- 1. HERO SECTION (Estilo Lançamento Apple) -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
+      <div class="text-center max-w-3xl mx-auto reveal">
+        <!-- Pill de Status com ponto Verde Butisom -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F5F5F7] border border-black/5 mb-6">
+          <span class="w-2 h-2 rounded-full bg-[#007A1F] animate-pulse"></span>
+          <span class="text-xs font-medium text-[#1D1D1F]">Bancada técnica ativa • Diagnóstico rápido com garantia</span>
+        </div>
 
-<script src="js/script.js" defer></script>
+        <!-- Headline Alto Impacto -->
+        <h1 class="text-4xl sm:text-6xl lg:text-[64px] font-bold tracking-tight text-[#1D1D1F] leading-[1.06]">
+          Seu aparelho novo de novo. <br class="hidden sm:block" />
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#E61919] via-[#1D1D1F] to-[#141066]">
+            Precisão em cada componente.
+          </span>
+        </h1>
+
+        <!-- Subtítulo direto e persuasivo -->
+        <p class="mt-6 text-lg sm:text-xl text-[#6E6E73] font-normal leading-relaxed max-w-2xl mx-auto">
+          Assistência técnica especializada em TVs Smart, LED, 4K, QLED, OLED e sistemas de áudio na <strong class="font-semibold text-[#1D1D1F]">Butisom Eletrônica</strong>. Transparência total antes do reparo e venda de aparelhos revisados.
+        </p>
+
+        <!-- Botões de Ação Principais -->
+        <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+          <a href="#orcamento" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#007A1F] hover:bg-[#006319] text-white font-semibold text-sm sm:text-base transition-all shadow-md hover:shadow-lg">
+            <!-- Ícone WhatsApp SVG -->
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.758.458 3.475 1.328 4.988L2 22l5.188-1.361a9.934 9.934 0 0 0 4.843 1.258h.004c5.515 0 9.968-4.453 9.968-9.969 0-2.663-1.037-5.166-2.92-7.049A9.903 9.903 0 0 0 12.031 2zm5.822 14.289c-.246.693-1.43 1.326-1.979 1.409-.507.076-1.148.108-1.854-.116-.428-.136-.977-.318-1.682-.622-2.959-1.277-4.892-4.254-5.04-4.451-.148-.197-1.205-1.602-1.205-3.056 0-1.454.762-2.169 1.033-2.465.271-.296.591-.37.788-.37.197 0 .394.002.566.01.182.009.426-.069.666.508.246.591.837 2.045.911 2.193.074.148.123.32.025.517-.099.197-.148.32-.296.493-.148.172-.311.385-.444.517-.148.148-.302.308-.13.604.172.296.766 1.264 1.645 2.048 1.131 1.008 2.084 1.321 2.38 1.469.296.148.468.123.641-.074.172-.197.739-.862.936-1.158.197-.296.394-.246.665-.148.271.099 1.724.813 2.02.961.296.148.493.222.566.345.074.123.074.714-.172 1.407z"/>
+            </svg>
+            Orçamento Rápido no WhatsApp
+          </a>
+          
+          <a href="#vendas" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#F5F5F7] hover:bg-[#EBEBEF] text-[#1D1D1F] font-semibold text-sm sm:text-base transition-all">
+            Ver aparelhos à venda
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Showcase Visual Minimalista (Hardware Display RGB + Áudio) -->
+      <div class="mt-14 sm:mt-16 reveal">
+        <div class="relative rounded-apple-lg bg-[#F5F5F7] border border-black/5 p-6 sm:p-10 lg:p-12 overflow-hidden apple-shadow">
+          <!-- Brilhos RGB extremamente sutis ao fundo -->
+          <div class="pointer-events-none absolute -top-24 -left-24 w-72 h-72 rounded-full bg-[#E61919]/10 blur-3xl"></div>
+          <div class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-[#007A1F]/10 blur-3xl"></div>
+          <div class="pointer-events-none absolute -bottom-24 -right-24 w-72 h-72 rounded-full bg-[#141066]/10 blur-3xl"></div>
+
+          <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- Ilustração Vetorial de TV 4K / OLED Ultra Fina -->
+            <div class="lg:col-span-7 flex flex-col items-center">
+              <div class="w-full max-w-lg">
+                <!-- Moldura da TV -->
+                <div class="relative aspect-[16/9] rounded-2xl bg-[#111113] p-2.5 shadow-2xl border border-white/10">
+                  <!-- Tela com espectro RGB calibrado -->
+                  <div class="w-full h-full rounded-xl overflow-hidden relative flex items-center justify-center bg-gradient-to-br from-[#1A1A1F] via-[#0E0E12] to-[#161622]">
+                    <!-- Ondas de cor RGB representando calibração de painel -->
+                    <div class="absolute inset-0 opacity-80" style="background: radial-gradient(circle at 25% 45%, rgba(230,25,25,0.55), transparent 50%), radial-gradient(circle at 52% 55%, rgba(0,122,31,0.5), transparent 50%), radial-gradient(circle at 78% 45%, rgba(20,16,102,0.75), transparent 55%);"></div>
+                    
+                    <div class="relative z-10 text-center px-4">
+                      <span class="inline-block text-[10px] uppercase tracking-[0.22em] text-white/70 font-semibold mb-1.5">Calibração & Reparo de Painel</span>
+                      <p class="text-white text-xl sm:text-2xl font-bold tracking-tight">Imagem e Som em Alta Definição</p>
+                      <div class="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15">
+                        <span class="w-2 h-2 rounded-full bg-[#E61919]"></span>
+                        <span class="w-2 h-2 rounded-full bg-[#007A1F]"></span>
+                        <span class="w-2 h-2 rounded-full bg-[#4F46E5]"></span>
+                        <span class="text-[11px] text-white/90 font-medium">RGB Precision Lab</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Pedestal minimalista da TV -->
+                <div class="mx-auto w-24 h-3 bg-gradient-to-b from-[#2C2C30] to-[#1D1D1F]"></div>
+                <div class="mx-auto w-48 h-1.5 rounded-full bg-[#1D1D1F] shadow-md"></div>
+              </div>
+            </div>
+
+            <!-- Métricas de Confiança + Equalizador de Áudio -->
+            <div class="lg:col-span-5 space-y-5">
+              <div class="bg-white/90 backdrop-blur-md rounded-apple p-6 border border-black/5">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-xs font-semibold uppercase tracking-wider text-[#141066]">Especialidade Butisom</span>
+                  <!-- Mini equalizador animado -->
+                  <div class="flex items-end gap-1 h-4">
+                    <span class="w-1 h-full bg-[#E61919] rounded-full audio-bar" style="animation-delay: 0.1s"></span>
+                    <span class="w-1 h-full bg-[#007A1F] rounded-full audio-bar" style="animation-delay: 0.3s"></span>
+                    <span class="w-1 h-full bg-[#141066] rounded-full audio-bar" style="animation-delay: 0.5s"></span>
+                    <span class="w-1 h-full bg-[#E61919] rounded-full audio-bar" style="animation-delay: 0.2s"></span>
+                  </div>
+                </div>
+                <h2 class="text-xl font-bold text-[#1D1D1F]">Por que escolher a Butisom?</h2>
+                <p class="text-sm text-[#6E6E73] mt-1.5 leading-relaxed">
+                  Unimos experiência técnica em eletrônica de precisão com atendimento claro. Você sabe exatamente o defeito, o valor e o prazo antes de aprovar.
+                </p>
+                
+                <div class="grid grid-cols-3 gap-3 mt-5 pt-4 border-t border-black/5 text-center">
+                  <div>
+                    <p class="text-lg sm:text-xl font-bold text-[#E61919]">TVs</p>
+                    <p class="text-[11px] text-[#6E6E73] font-medium">LED, 4K & OLED</p>
+                  </div>
+                  <div class="border-x border-black/5">
+                    <p class="text-lg sm:text-xl font-bold text-[#141066]">Áudio</p>
+                    <p class="text-[11px] text-[#6E6E73] font-medium">Som & Potência</p>
+                  </div>
+                  <div>
+                    <p class="text-lg sm:text-xl font-bold text-[#007A1F]">Garantia</p>
+                    <p class="text-[11px] text-[#6E6E73] font-medium">Em todo serviço</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SIMULADOR INTERATIVO DE PRÉ-ORÇAMENTO (Foco em Conversão) -->
+    <section id="orcamento" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 reveal">
+      <div class="rounded-apple-lg bg-[#1D1D1F] text-white p-6 sm:p-10 lg:p-12 relative overflow-hidden">
+        <div class="h-1 w-full rgb-line absolute top-0 left-0"></div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div class="lg:col-span-5">
+            <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-white/90 mb-4">
+              Atendimento Ágil
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
+              Peça seu pré-orçamento em 30 segundos.
+            </h2>
+            <p class="mt-4 text-sm sm:text-base text-white/70 leading-relaxed">
+              Selecione o aparelho e o sintoma abaixo. Nós montamos a mensagem pronta para você enviar direto ao técnico da Butisom no WhatsApp.
+            </p>
+            <div class="mt-6 flex items-center gap-3 text-xs text-white/60">
+              <svg class="w-4 h-4 text-[#007A1F] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Você também pode anexar foto ou vídeo do defeito na conversa.</span>
+            </div>
+          </div>
+
+          <!-- Formulário Interativo Estilo Apple -->
+          <div class="lg:col-span-7 bg-white/5 border border-white/10 rounded-apple p-5 sm:p-7 backdrop-blur-md">
+            <div class="space-y-5">
+              <!-- Passo 1: Tipo de Aparelho -->
+              <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-white/60 mb-2.5">1. Qual aparelho precisa de conserto?</label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="device-options">
+                  <button type="button" data-device="TV Smart / LED / 4K" class="device-btn active-opt px-3 py-2.5 rounded-xl text-xs font-semibold border border-white bg-white text-[#1D1D1F] transition-all text-center">
+                    TV Smart / LED
+                  </button>
+                  <button type="button" data-device="Caixa de Som / Amplificada" class="device-btn px-3 py-2.5 rounded-xl text-xs font-semibold border border-white/15 bg-white/5 text-white/80 hover:bg-white/10 transition-all text-center">
+                    Caixa de Som
+                  </button>
+                  <button type="button" data-device="Receiver / Home Theater" class="device-btn px-3 py-2.5 rounded-xl text-xs font-semibold border border-white/15 bg-white/5 text-white/80 hover:bg-white/10 transition-all text-center">
+                    Receiver / Som
+                  </button>
+                  <button type="button" data-device="Outro Aparelho Eletrônico" class="device-btn px-3 py-2.5 rounded-xl text-xs font-semibold border border-white/15 bg-white/5 text-white/80 hover:bg-white/10 transition-all text-center">
+                    Outro Aparelho
+                  </button>
+                </div>
+              </div>
+
+              <!-- Passo 2: Sintoma / Defeito -->
+              <div>
+                <label class="block text-xs font-semibold uppercase tracking-wider text-white/60 mb-2.5">2. O que está acontecendo?</label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="issue-options">
+                  <button type="button" data-issue="Tem som, mas a tela ficou escura / sem imagem" class="issue-btn active-opt px-3.5 py-2.5 rounded-xl text-xs font-medium border border-white bg-white text-[#1D1D1F] transition-all text-left">
+                    Tela escura / Sem imagem (tem som)
+                  </button>
+                  <button type="button" data-issue="Aparelho não liga / Não acende o stand-by" class="issue-btn px-3.5 py-2.5 rounded-xl text-xs font-medium border border-white/15 bg-white/5 text-white/80 hover:bg-white/10 transition-all text-left">
+                    Não liga / Sem sinal de energia
+                  </button>
+                  <button type="button" data-issue="Sem áudio, chiado ou som distorcido" class="issue-btn px-3.5 py-2.5 rounded-xl text-xs font-medium border border-white/15 bg-white/5 text-white/80 hover:bg-white/10 transition-all text-left">
+                    Sem som, chiado ou falha no áudio
+                  </button>
+                  <button type="button" data-issue="Problema nas entradas HDMI, Wi-Fi ou placa" class="issue-btn px-3.5 py-2.5 rounded-xl text-xs font-medium border border-white/15 bg-white/5 text-white/80 hover:bg-white/10 transition-all text-left">
+                    Falha em HDMI, Wi-Fi ou reiniciando
+                  </button>
+                </div>
+              </div>
+
+              <!-- Passo 3: Marca / Modelo (Opcional) -->
+              <div>
+                <label for="brand-input" class="block text-xs font-semibold uppercase tracking-wider text-white/60 mb-2">3. Marca ou polegadas (opcional)</label>
+                <input id="brand-input" type="text" placeholder="Ex: Samsung 50 polegadas, LG, JBL, Sony..." class="w-full px-4 py-2.5 rounded-xl bg-white/10 border border-white/15 text-sm text-white placeholder-white/40 focus:outline-none focus:border-white transition-colors" />
+              </div>
+
+              <!-- Prévia da mensagem + Botão Enviar -->
+              <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-t border-white/10">
+                <p id="whatsapp-preview" class="text-xs text-white/60 italic line-clamp-2">
+                  "Olá, Butisom Eletrônica! Gostaria de um orçamento para conserto de TV Smart / LED / 4K. Defeito: Tem som, mas a tela ficou escura / sem imagem."
+                </p>
+                <button id="send-whatsapp-btn" type="button" class="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#007A1F] hover:bg-[#00661A] text-white font-semibold text-sm transition-all shadow-lg cursor-pointer">
+                  <span>Enviar no WhatsApp</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. BENTO GRID DE SERVIÇOS (O Coração do Estilo Apple) -->
+    <section id="servicos" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="max-w-2xl mb-12 reveal">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#E61919]">Serviços Especializados</span>
+        <h2 class="mt-2 text-3xl sm:text-5xl font-bold tracking-tight text-[#1D1D1F]">
+          Tecnologia reparada com rigor técnico.
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-[#6E6E73]">
+          De televisores de última geração a equipamentos de som de alta potência. Diagnóstico preciso para recuperar seu equipamento.
+        </p>
+      </div>
+
+      <!-- Grade Bento Assimétrica -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        
+        <!-- Card 1 (Grande - TVs - Acento Vermelho Butisom) -->
+        <div class="md:col-span-7 rounded-apple bg-[#F5F5F7] p-8 sm:p-10 apple-card-hover reveal relative overflow-hidden flex flex-col justify-between border border-black/[0.04]">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E61919]/10 text-[#E61919] text-xs font-bold mb-6">
+              <span class="w-2 h-2 rounded-full bg-[#E61919]"></span>
+              Televisores
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-[#1D1D1F] tracking-tight">
+              Conserto de Smart TVs, LED, 4K, QLED e OLED.
+            </h3>
+            <p class="mt-3 text-sm sm:text-base text-[#6E6E73] leading-relaxed">
+              Sua TV perdeu a imagem, está com manchas azuladas, reiniciando ou não liga? Realizamos reparos avançados em placas e iluminação com peças de alta durabilidade.
+            </p>
+            <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-medium text-[#1D1D1F]">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#E61919]"></span> Troca de barras de LED originais
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#E61919]"></span> Reparo de placa fonte e principal
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#E61919]"></span> Recuperação de placa T-Con
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#E61919]"></span> Substituição de conectores HDMI
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-black/5 flex items-center justify-between">
+            <span class="text-xs font-semibold text-[#6E6E73]">Samsung • LG • Sony • TCL • Philips • AOC</span>
+            <a href="#orcamento" class="text-xs font-bold text-[#E61919] hover:underline">Solicitar avaliação →</a>
+          </div>
+        </div>
+
+        <!-- Card 2 (Médio - Áudio - Acento Azul Profundo Butisom) -->
+        <div class="md:col-span-5 rounded-apple bg-[#F5F5F7] p-8 sm:p-10 apple-card-hover reveal flex flex-col justify-between border border-black/[0.04]">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#141066]/10 text-[#141066] text-xs font-bold mb-6">
+              <span class="w-2 h-2 rounded-full bg-[#141066]"></span>
+              Sistemas de Áudio
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-[#1D1D1F] tracking-tight">
+              Som residencial e profissional sem distorção.
+            </h3>
+            <p class="mt-3 text-sm sm:text-base text-[#6E6E73] leading-relaxed">
+              Manutenção especializada em caixas amplificadas, receivers, home theaters, soundbars, mesas de som e módulos de potência.
+            </p>
+            <ul class="mt-6 space-y-2 text-xs sm:text-sm font-medium text-[#1D1D1F]">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#141066]"></span> Reparo de saídas de áudio e fontes
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#141066]"></span> Troca de conectores, baterias e placas Bluetooth
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#141066]"></span> Eliminação de ruídos, chiados e mal contato
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-black/5 flex items-center justify-between">
+            <span class="text-xs font-semibold text-[#6E6E73]">JBL • Sony • Yamaha • Mondial • Gradiente</span>
+            <a href="#orcamento" class="text-xs font-bold text-[#141066] hover:underline">Orçar áudio →</a>
+          </div>
+        </div>
+
+        <!-- Card 3 (Médio - Garantia & Transparência - Acento Verde Butisom) -->
+        <div class="md:col-span-5 rounded-apple bg-[#F5F5F7] p-8 sm:p-10 apple-card-hover reveal flex flex-col justify-between border border-black/[0.04]">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#007A1F]/10 text-[#007A1F] text-xs font-bold mb-6">
+              <span class="w-2 h-2 rounded-full bg-[#007A1F]"></span>
+              Compromisso Butisom
+            </div>
+            <h3 class="text-2xl font-bold text-[#1D1D1F] tracking-tight">
+              Orçamento transparente e garantia real.
+            </h3>
+            <p class="mt-3 text-sm sm:text-base text-[#6E6E73] leading-relaxed">
+              Nada é trocado sem a sua autorização prévia. Explicamos o defeito em linguagem clara, usamos componentes testados e entregamos seu aparelho com garantia.
+            </p>
+          </div>
+          <div class="mt-8 flex items-center gap-3 bg-white p-3.5 rounded-2xl border border-black/5">
+            <div class="w-9 h-9 rounded-full bg-[#007A1F]/10 text-[#007A1F] flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-[#1D1D1F]">Segurança total no serviço</p>
+              <p class="text-[11px] text-[#6E6E73]">Testes rigorosos em bancada antes da entrega</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 (Grande - Venda de Aparelhos - Acento Tricolor RGB) -->
+        <div class="md:col-span-7 rounded-apple bg-[#F5F5F7] p-8 sm:p-10 apple-card-hover reveal flex flex-col justify-between border border-black/[0.04] relative overflow-hidden">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#1D1D1F] text-xs font-bold mb-6 shadow-xs border border-black/5">
+              <span class="w-2 h-2 rounded-full bg-[#E61919]"></span>
+              <span class="w-2 h-2 rounded-full bg-[#007A1F]"></span>
+              <span class="w-2 h-2 rounded-full bg-[#141066]"></span>
+              Loja Butisom
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-[#1D1D1F] tracking-tight">
+              Aparelhos novos e seminovos revisados na bancada.
+            </h3>
+            <p class="mt-3 text-sm sm:text-base text-[#6E6E73] leading-relaxed">
+              Quer trocar de aparelho ou não compensa consertar o antigo? Temos opções de televisores, caixas de som e acessórios revisados pela nossa própria equipe técnica, prontos para uso e com garantia.
+            </p>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-black/5 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-4 text-xs font-medium text-[#6E6E73]">
+              <span>✓ Revisados por técnicos</span>
+              <span>✓ Pronta entrega</span>
+            </div>
+            <a href="#vendas" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#1D1D1F] text-white text-xs font-semibold hover:bg-[#141066] transition-colors">
+              Conferir vitrine
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. COMO FUNCIONA EM 3 PASSOS SIMPLES -->
+    <section id="como-funciona" class="bg-[#F5F5F7] py-16 sm:py-24 border-y border-black/[0.04]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#141066]">Processo Simples</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-[#1D1D1F]">
+            Sem burocracia. Do defeito à solução.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+          <!-- Passo 1 -->
+          <div class="bg-white rounded-apple p-8 border border-black/[0.04] apple-shadow">
+            <div class="w-10 h-10 rounded-2xl bg-[#E61919]/10 text-[#E61919] font-bold text-base flex items-center justify-center mb-5">
+              1
+            </div>
+            <h3 class="text-lg font-bold text-[#1D1D1F]">Chame no WhatsApp ou traga o aparelho</h3>
+            <p class="mt-2.5 text-sm text-[#6E6E73] leading-relaxed">
+              Conte o sintoma pelo WhatsApp ou traga sua TV ou equipamento de som diretamente até o balcão da Butisom Eletrônica.
+            </p>
+          </div>
+
+          <!-- Passo 2 -->
+          <div class="bg-white rounded-apple p-8 border border-black/[0.04] apple-shadow">
+            <div class="w-10 h-10 rounded-2xl bg-[#141066]/10 text-[#141066] font-bold text-base flex items-center justify-center mb-5">
+              2
+            </div>
+            <h3 class="text-lg font-bold text-[#1D1D1F]">Receba o orçamento transparente</h3>
+            <p class="mt-2.5 text-sm text-[#6E6E73] leading-relaxed">
+              Nossa bancada analisa o circuito, identifica a causa exata e envia o valor fechado para você aprovar sem surpresas.
+            </p>
+          </div>
+
+          <!-- Passo 3 -->
+          <div class="bg-white rounded-apple p-8 border border-black/[0.04] apple-shadow">
+            <div class="w-10 h-10 rounded-2xl bg-[#007A1F]/10 text-[#007A1F] font-bold text-base flex items-center justify-center mb-5">
+              3
+            </div>
+            <h3 class="text-lg font-bold text-[#1D1D1F]">Retire funcionando com garantia</h3>
+            <p class="mt-2.5 text-sm text-[#6E6E73] leading-relaxed">
+              Após o reparo e os testes de qualidade, avisamos você para retirar seu aparelho pronto para uso e com garantia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. VITRINE DE APARELHOS À VENDA (Estilo Apple Store) -->
+    <section id="vendas" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4 reveal">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-[#007A1F]">Vitrine Butisom</span>
+          <h2 class="mt-2 text-3xl sm:text-5xl font-bold tracking-tight text-[#1D1D1F]">
+            Aparelhos disponíveis para venda.
+          </h2>
+          <p class="mt-3 text-base text-[#6E6E73] max-w-xl">
+            Equipamentos novos e seminovos rigorosamente revisados pela nossa assistência técnica. Estoque rotativo.
+          </p>
+        </div>
+        <button type="button" onclick="openDirectWhatsApp('Olá, Butisom Eletrônica! Gostaria de saber quais aparelhos vocês têm disponíveis para venda hoje.')" class="self-start sm:self-auto text-sm font-semibold text-[#141066] hover:underline cursor-pointer">
+          Consultar estoque completo →
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Produto 1: Smart TV 4K -->
+        <div class="rounded-apple bg-[#F5F5F7] p-6 sm:p-7 flex flex-col justify-between apple-card-hover reveal border border-black/[0.04]">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-full bg-[#007A1F]/10 text-[#007A1F] text-[11px] font-bold">Revisada com Garantia</span>
+              <span class="text-xs font-medium text-[#6E6E73]">Imagem 4K</span>
+            </div>
+            
+            <!-- Ilustração Vetorial Limpa do Produto -->
+            <div class="h-44 rounded-2xl bg-white flex items-center justify-center p-6 mb-5 border border-black/[0.03]">
+              <svg class="w-40 h-28" viewBox="0 0 180 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="160" height="90" rx="8" fill="#1D1D1F"/>
+                <rect x="15" y="15" width="150" height="80" rx="4" fill="url(#tvGrad1)"/>
+                <path d="M75 100H105L110 110H70L75 100Z" fill="#2C2C30"/>
+                <rect x="55" y="109" width="70" height="3" rx="1.5" fill="#1D1D1F"/>
+                <defs>
+                  <linearGradient id="tvGrad1" x1="15" y1="15" x2="165" y2="95" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E61919"/>
+                    <stop offset="0.5" stop-color="#141066"/>
+                    <stop offset="1" stop-color="#007A1F"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+
+            <h3 class="text-xl font-bold text-[#1D1D1F]">Smart TV LED 4K UHD (43" a 55")</h3>
+            <p class="mt-2 text-sm text-[#6E6E73] leading-relaxed">
+              Painel revisado, sistema Smart rápido (YouTube, Netflix, Globoplay), entradas HDMI/USB testadas e controle remoto incluído.
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-black/5">
+            <button type="button" onclick="openDirectWhatsApp('Olá, Butisom Eletrônica! Tenho interesse nas Smart TVs revisadas à venda. Quais modelos e valores vocês têm disponíveis?')" class="w-full py-3 px-4 rounded-full bg-white hover:bg-[#1D1D1F] text-[#1D1D1F] hover:text-white font-semibold text-xs transition-all border border-black/10 cursor-pointer">
+              Consultar disponibilidade no WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- Produto 2: Caixa de Som Amplificada -->
+        <div class="rounded-apple bg-[#F5F5F7] p-6 sm:p-7 flex flex-col justify-between apple-card-hover reveal border border-black/[0.04]">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-full bg-[#141066]/10 text-[#141066] text-[11px] font-bold">Alta Potência</span>
+              <span class="text-xs font-medium text-[#6E6E73]">Áudio Bluetooth</span>
+            </div>
+            
+            <!-- Ilustração Vetorial Caixa de Som -->
+            <div class="h-44 rounded-2xl bg-white flex items-center justify-center p-6 mb-5 border border-black/[0.03]">
+              <svg class="w-32 h-32" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="30" y="12" width="60" height="96" rx="12" fill="#1D1D1F"/>
+                <circle cx="60" cy="38" r="13" fill="#2A2A2E" stroke="#141066" stroke-width="2.5"/>
+                <circle cx="60" cy="38" r="4" fill="#141066"/>
+                <circle cx="60" cy="76" r="20" fill="#2A2A2E" stroke="#E61919" stroke-width="2.5"/>
+                <circle cx="60" cy="76" r="7" fill="#1D1D1F"/>
+              </svg>
+            </div>
+
+            <h3 class="text-xl font-bold text-[#1D1D1F]">Caixa de Som Amplificada Bluetooth</h3>
+            <p class="mt-2 text-sm text-[#6E6E73] leading-relaxed">
+              Graves encorpados, conexão Bluetooth, entrada para microfone e bateria testada em bancada. Ideal para festas e uso residencial.
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-black/5">
+            <button type="button" onclick="openDirectWhatsApp('Olá, Butisom Eletrônica! Gostaria de ver os modelos e preços das Caixas de Som Amplificadas à venda.')" class="w-full py-3 px-4 rounded-full bg-white hover:bg-[#1D1D1F] text-[#1D1D1F] hover:text-white font-semibold text-xs transition-all border border-black/10 cursor-pointer">
+              Consultar disponibilidade no WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- Produto 3: Receiver / Home Theater & Acessórios -->
+        <div class="rounded-apple bg-[#F5F5F7] p-6 sm:p-7 flex flex-col justify-between apple-card-hover reveal border border-black/[0.04]">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-full bg-[#E61919]/10 text-[#E61919] text-[11px] font-bold">Revisado & Testado</span>
+              <span class="text-xs font-medium text-[#6E6E73]">Som & Acessórios</span>
+            </div>
+            
+            <!-- Ilustração Vetorial Receiver / Soundbar -->
+            <div class="h-44 rounded-2xl bg-white flex items-center justify-center p-6 mb-5 border border-black/[0.03]">
+              <svg class="w-44 h-28" viewBox="0 0 180 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="34" width="148" height="42" rx="8" fill="#1D1D1F"/>
+                <rect x="28" y="45" width="64" height="20" rx="3" fill="#111113" stroke="#007A1F" stroke-width="1.5"/>
+                <circle cx="38" cy="55" r="2.5" fill="#007A1F"/>
+                <rect x="46" y="53" width="36" height="4" rx="2" fill="#007A1F" fill-opacity="0.7"/>
+                <circle cx="116" cy="55" r="7" fill="#2C2C30" stroke="#6E6E73" stroke-width="1.5"/>
+                <circle cx="142" cy="55" r="9" fill="#2C2C30" stroke="#E61919" stroke-width="1.5"/>
+              </svg>
+            </div>
+
+            <h3 class="text-xl font-bold text-[#1D1D1F]">Receivers, Soundbars e Acessórios</h3>
+            <p class="mt-2 text-sm text-[#6E6E73] leading-relaxed">
+              Equipamentos de som clássicos e modernos revisados, além de controles remotos, fontes, cabos HDMI e suportes de parede.
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-black/5">
+            <button type="button" onclick="openDirectWhatsApp('Olá, Butisom Eletrônica! Gostaria de consultar os Receivers, Soundbars e acessórios disponíveis na loja.')" class="w-full py-3 px-4 rounded-full bg-white hover:bg-[#1D1D1F] text-[#1D1D1F] hover:text-white font-semibold text-xs transition-all border border-black/10 cursor-pointer">
+              Consultar disponibilidade no WhatsApp
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. LOCALIZAÇÃO, HORÁRIOS E CONTATO -->
+    <section id="localizacao" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 reveal">
+      <div class="rounded-apple-lg bg-[#F5F5F7] p-6 sm:p-10 lg:p-12 border border-black/[0.04]">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 space-y-6">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-[#141066]">Onde Estamos</span>
+              <h2 class="mt-2 text-3xl font-bold tracking-tight text-[#1D1D1F]">
+                Visite a Butisom Eletrônica.
+              </h2>
+              <p class="mt-2 text-sm text-[#6E6E73]">
+                Traga seu aparelho para avaliação diretamente em nossa loja ou entre em contato para tirar dúvidas antes de vir.
+              </p>
+            </div>
+
+            <div class="space-y-4 text-sm">
+              <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-[#E61919] shrink-0 shadow-xs">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-bold text-[#1D1D1F]">Endereço da Loja</p>
+                  <p class="text-[#6E6E73]">R. Gen. Neto, 495 - Centro<br/>Rio Grande - RS, 96200-010</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-[#007A1F] shrink-0 shadow-xs">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-bold text-[#1D1D1F]">Horário de Atendimento</p>
+                  <p class="text-[#6E6E73]">Segunda a sexta: 9h às 12h<br/>13h30 às 18h</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-[#141066] shrink-0 shadow-xs">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-bold text-[#1D1D1F]">WhatsApp & Telefone</p>
+                  <p class="text-[#6E6E73]">(53) 98124-1499 • Atendimento rápido</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5">
+                <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-[#141066] shrink-0 shadow-xs">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-bold text-[#1D1D1F]">Redes Sociais</p>
+                  <a href="https://www.facebook.com/eletrbutisom/" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#141066] hover:underline">Facebook: @eletrbutisom</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cartão com o mapa real da loja -->
+          <div class="lg:col-span-7">
+            <div class="h-72 sm:h-80 rounded-apple bg-white border border-black/5 overflow-hidden shadow-xs">
+              <iframe
+                title="Localização da Butisom Eletrônica no Google Maps"
+                src="https://www.google.com/maps?q=-32.037662506103516,-52.09909439086914&z=17&output=embed"
+                class="w-full h-full border-0"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER MINIMALISTA -->
+  <footer class="bg-white border-t border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-1">
+          <span class="w-2.5 h-4 rounded-xs bg-[#E61919] -skew-x-12"></span>
+          <span class="w-2.5 h-4 rounded-xs bg-[#007A1F] -skew-x-12"></span>
+          <span class="w-2.5 h-4 rounded-xs bg-[#141066] -skew-x-12"></span>
+        </div>
+        <span class="font-bold text-sm text-[#1D1D1F]">Butisom Eletrônica</span>
+      </div>
+
+      <p class="text-xs text-[#6E6E73] text-center">
+        © <span id="current-year"></span> Butisom Eletrônica. Assistência Técnica de TV, Áudio e Venda de Aparelhos.
+      </p>
+
+      <div class="flex items-center gap-5 text-xs font-medium text-[#6E6E73]">
+        <a href="#servicos" class="hover:text-[#1D1D1F] transition-colors">Serviços</a>
+        <a href="#orcamento" class="hover:text-[#1D1D1F] transition-colors">Orçamento</a>
+        <a href="#vendas" class="hover:text-[#1D1D1F] transition-colors">Loja</a>
+      </div>
+    </div>
+    <div class="h-1 w-full rgb-line"></div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DISCRETO WHATSAPP -->
+  <button type="button" onclick="openDirectWhatsApp('Olá, Butisom Eletrônica! Vim pelo site e gostaria de falar com a assistência técnica.')" aria-label="Falar no WhatsApp" class="fixed bottom-5 right-5 z-40 inline-flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#007A1F] hover:bg-[#006319] text-white font-semibold text-xs sm:text-sm shadow-xl hover:scale-105 transition-all cursor-pointer">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+      <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.758.458 3.475 1.328 4.988L2 22l5.188-1.361a9.934 9.934 0 0 0 4.843 1.258h.004c5.515 0 9.968-4.453 9.968-9.969 0-2.663-1.037-5.166-2.92-7.049A9.903 9.903 0 0 0 12.031 2zm5.822 14.289c-.246.693-1.43 1.326-1.979 1.409-.507.076-1.148.108-1.854-.116-.428-.136-.977-.318-1.682-.622-2.959-1.277-4.892-4.254-5.04-4.451-.148-.197-1.205-1.602-1.205-3.056 0-1.454.762-2.169 1.033-2.465.271-.296.591-.37.788-.37.197 0 .394.002.566.01.182.009.426-.069.666.508.246.591.837 2.045.911 2.193.074.148.123.32.025.517-.099.197-.148.32-.296.493-.148.172-.311.385-.444.517-.148.148-.302.308-.13.604.172.296.766 1.264 1.645 2.048 1.131 1.008 2.084 1.321 2.38 1.469.296.148.468.123.641-.074.172-.197.739-.862.936-1.158.197-.296.394-.246.665-.148.271.099 1.724.813 2.02.961.296.148.493.222.566.345.074.123.074.714-.172 1.407z"/>
+    </svg>
+    <span class="hidden sm:inline">Orçamento WhatsApp</span>
+  </button>
+
+  <!-- MODAL DE CONFIRMAÇÃO / CÓPIA DE MENSAGEM WHATSAPP (Sem usar alert()) -->
+  <div id="whatsapp-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-xs p-4">
+    <div class="bg-white rounded-apple max-w-md w-full p-6 sm:p-8 shadow-2xl border border-black/5 relative">
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#007A1F]"></span>
+          <h3 class="text-lg font-bold text-[#1D1D1F]">Mensagem Pronta para Envio</h3>
+        </div>
+        <button id="close-modal-btn" type="button" class="p-1.5 rounded-full hover:bg-[#F5F5F7] text-[#6E6E73] cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <p class="text-xs text-[#6E6E73] mb-3">
+        Sua solicitação foi preparada. Clique abaixo para abrir o WhatsApp da Butisom Eletrônica ou copie o texto:
+      </p>
+
+      <div class="p-4 rounded-2xl bg-[#F5F5F7] text-xs sm:text-sm text-[#1D1D1F] font-medium leading-relaxed border border-black/5 mb-5" id="modal-message-box"></div>
+
+      <div class="flex flex-col sm:flex-row gap-2.5">
+        <a id="modal-wa-link" href="#" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-[#007A1F] hover:bg-[#00631A] text-white font-semibold text-xs sm:text-sm transition-colors">
+          Abrir WhatsApp Agora
+        </a>
+        <button id="copy-msg-btn" type="button" class="py-3 px-4 rounded-full bg-[#F5F5F7] hover:bg-[#EBEBEF] text-[#1D1D1F] font-semibold text-xs sm:text-sm transition-colors cursor-pointer">
+          Copiar Texto
+        </button>
+      </div>
+      <p id="copy-feedback" class="hidden text-center text-xs font-semibold text-[#007A1F] mt-3">
+        ✓ Mensagem copiada para a área de transferência!
+      </p>
+    </div>
+  </div>
+
+    <script src="js/script.js" defer></script>
 </body>
 </html>

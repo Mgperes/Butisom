@@ -1,35 +1,136 @@
-var CFG={whats:"5553981241499",endereco:"",horario:"Segunda a sexta: 9h às 12h e 13h30 às 18h"};
-(function(){
-var root=document.documentElement;
-var themeToggle=document.getElementById("theme-toggle");
-var storedTheme=null;
-try{storedTheme=localStorage.getItem("butisom-theme")}catch(e){}
-var currentTheme=storedTheme||(window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");
-function applyTheme(theme){
-root.dataset.theme=theme;
-var dark=theme==="dark";
-if(themeToggle){
-themeToggle.setAttribute("aria-pressed",dark?"true":"false");
-themeToggle.setAttribute("aria-label",dark?"Ativar modo claro":"Ativar modo escuro");
-themeToggle.querySelector(".theme-icon").textContent=dark?"☀":"☾";
-}
-}
-applyTheme(currentTheme);
-if(themeToggle){
-themeToggle.addEventListener("click",function(){
-var next=root.dataset.theme==="dark"?"light":"dark";
-applyTheme(next);
-try{localStorage.setItem("butisom-theme",next)}catch(e){}
-});
-}
-var w=CFG.whats;
-function link(t){return "https://wa.me/"+w+"?text="+encodeURIComponent(t)}
-document.querySelectorAll("[data-wa]").forEach(function(a){a.href=link("Olá! Gostaria de um orçamento de conserto.");a.target="_blank";a.rel="noopener"});
-[["i-end",CFG.endereco],["i-hor",CFG.horario]].forEach(function(p){var e=document.getElementById(p[0]);if(p[1]){e.textContent=p[1];e.className=""}});
-document.getElementById("y").textContent=new Date().getFullYear();
-document.getElementById("f").addEventListener("submit",function(e){e.preventDefault();
-var t="Olá! Sou "+(document.getElementById("f-nm").value||"cliente")+". Aparelho: "+document.getElementById("f-ap").value+". Defeito: "+document.getElementById("f-df").value;
-window.open(link(t),"_blank")});
-var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});
-document.querySelectorAll(".rv").forEach(function(el,i){el.style.transitionDelay=(i%4)*90+"ms";io.observe(el)});
-})();
+const WHATSAPP_NUMBER = '5553981241499';
+
+    // Atualiza ano no rodapé
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Menu Mobile Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
+
+    // Animação Reveal suave no Scroll (IntersectionObserver)
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Lógica do Simulador Interativo de Pré-Orçamento
+    let selectedDevice = 'TV Smart / LED / 4K';
+    let selectedIssue = 'Tem som, mas a tela ficou escura / sem imagem';
+
+    const deviceBtns = document.querySelectorAll('.device-btn');
+    const issueBtns = document.querySelectorAll('.issue-btn');
+    const brandInput = document.getElementById('brand-input');
+    const previewEl = document.getElementById('whatsapp-preview');
+    const sendWhatsappBtn = document.getElementById('send-whatsapp-btn');
+
+    function buildEstimateMessage() {
+      const brandText = brandInput.value.trim();
+      const brandPart = brandText ? ` (${brandText})` : '';
+      return `Olá, Butisom Eletrônica! Gostaria de um orçamento para conserto de ${selectedDevice}${brandPart}. Defeito: ${selectedIssue}.`;
+    }
+
+    function updatePreview() {
+      previewEl.textContent = `"${buildEstimateMessage()}"`;
+    }
+
+    deviceBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        deviceBtns.forEach(b => {
+          b.classList.remove('bg-white', 'text-[#1D1D1F]', 'border-white');
+          b.classList.add('bg-white/5', 'text-white/80', 'border-white/15');
+        });
+        btn.classList.remove('bg-white/5', 'text-white/80', 'border-white/15');
+        btn.classList.add('bg-white', 'text-[#1D1D1F]', 'border-white');
+        selectedDevice = btn.getAttribute('data-device');
+        updatePreview();
+      });
+    });
+
+    issueBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        issueBtns.forEach(b => {
+          b.classList.remove('bg-white', 'text-[#1D1D1F]', 'border-white');
+          b.classList.add('bg-white/5', 'text-white/80', 'border-white/15');
+        });
+        btn.classList.remove('bg-white/5', 'text-white/80', 'border-white/15');
+        btn.classList.add('bg-white', 'text-[#1D1D1F]', 'border-white');
+        selectedIssue = btn.getAttribute('data-issue');
+        updatePreview();
+      });
+    });
+
+    brandInput.addEventListener('input', updatePreview);
+
+    // Modal e Redirecionamento Seguro para WhatsApp
+    const modal = document.getElementById('whatsapp-modal');
+    const modalMessageBox = document.getElementById('modal-message-box');
+    const modalWaLink = document.getElementById('modal-wa-link');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const copyMsgBtn = document.getElementById('copy-msg-btn');
+    const copyFeedback = document.getElementById('copy-feedback');
+
+    function openDirectWhatsApp(messageText) {
+      const encodedMsg = encodeURIComponent(messageText);
+      const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMsg}`;
+      
+      modalMessageBox.textContent = messageText;
+      modalWaLink.href = waUrl;
+      copyFeedback.classList.add('hidden');
+      
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    sendWhatsappBtn.addEventListener('click', () => {
+      openDirectWhatsApp(buildEstimateMessage());
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    });
+
+    // Cópia compatível com iframes usando execCommand
+    copyMsgBtn.addEventListener('click', () => {
+      const tempInput = document.createElement('textarea');
+      tempInput.value = modalMessageBox.textContent;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        copyFeedback.classList.remove('hidden');
+      } catch (err) {
+        console.error('Erro ao copiar texto:', err);
+      }
+      document.body.removeChild(tempInput);
+    });
