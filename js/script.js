@@ -49,7 +49,7 @@ const WHATSAPP_NUMBER = '5553981241499';
     function buildEstimateMessage() {
       const brandText = brandInput.value.trim();
       const brandPart = brandText ? ` (${brandText})` : '';
-      return `Olá, Butisom Eletrônica! Gostaria de um orçamento para conserto de ${selectedDevice}${brandPart}. Defeito: ${selectedIssue}.`;
+      return `Olá, Butisom Eletrônica! Gostaria de solicitar o orçamento gratuito para conserto de ${selectedDevice}${brandPart}. Defeito: ${selectedIssue}.`;
     }
 
     function updatePreview() {
