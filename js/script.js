@@ -36,54 +36,6 @@ const WHATSAPP_NUMBER = '5553981241499';
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // Lógica do Simulador Interativo de Pré-Orçamento
-    let selectedDevice = 'TV Smart / LED / 4K';
-    let selectedIssue = 'Tem som, mas a tela ficou escura / sem imagem';
-
-    const deviceBtns = document.querySelectorAll('.device-btn');
-    const issueBtns = document.querySelectorAll('.issue-btn');
-    const brandInput = document.getElementById('brand-input');
-    const previewEl = document.getElementById('whatsapp-preview');
-    const sendWhatsappBtn = document.getElementById('send-whatsapp-btn');
-
-    function buildEstimateMessage() {
-      const brandText = brandInput.value.trim();
-      const brandPart = brandText ? ` (${brandText})` : '';
-      return `Olá, Butisom Eletrônica! Gostaria de solicitar o orçamento gratuito para conserto de ${selectedDevice}${brandPart}. Defeito: ${selectedIssue}.`;
-    }
-
-    function updatePreview() {
-      previewEl.textContent = `"${buildEstimateMessage()}"`;
-    }
-
-    deviceBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        deviceBtns.forEach(b => {
-          b.classList.remove('bg-white', 'text-[#1D1D1F]', 'border-white');
-          b.classList.add('bg-white/5', 'text-white/80', 'border-white/15');
-        });
-        btn.classList.remove('bg-white/5', 'text-white/80', 'border-white/15');
-        btn.classList.add('bg-white', 'text-[#1D1D1F]', 'border-white');
-        selectedDevice = btn.getAttribute('data-device');
-        updatePreview();
-      });
-    });
-
-    issueBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        issueBtns.forEach(b => {
-          b.classList.remove('bg-white', 'text-[#1D1D1F]', 'border-white');
-          b.classList.add('bg-white/5', 'text-white/80', 'border-white/15');
-        });
-        btn.classList.remove('bg-white/5', 'text-white/80', 'border-white/15');
-        btn.classList.add('bg-white', 'text-[#1D1D1F]', 'border-white');
-        selectedIssue = btn.getAttribute('data-issue');
-        updatePreview();
-      });
-    });
-
-    brandInput.addEventListener('input', updatePreview);
-
     // Modal e Redirecionamento Seguro para WhatsApp
     const modal = document.getElementById('whatsapp-modal');
     const modalMessageBox = document.getElementById('modal-message-box');
@@ -103,10 +55,6 @@ const WHATSAPP_NUMBER = '5553981241499';
       modal.classList.remove('hidden');
       modal.classList.add('flex');
     }
-
-    sendWhatsappBtn.addEventListener('click', () => {
-      openDirectWhatsApp(buildEstimateMessage());
-    });
 
     closeModalBtn.addEventListener('click', () => {
       modal.classList.add('hidden');
