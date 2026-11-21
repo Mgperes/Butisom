@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre a Butisom Eletrônica</title>
+  <meta name="description" content="Conheça a história, a trajetória e a equipe da Butisom Eletrônica." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+
+  <script src="js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="selection:bg-[#141066] selection:text-white">
+
+  <!-- Barra de Navegação Fixa (Glassmorphism) -->
+  <header class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all">
+    <div class="h-[2.5px] w-full rgb-line"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center group focus:outline-none" aria-label="Butisom Eletrônica Início">
+        <img src="imagens/logo.png" alt="Butisom Eletrônica" class="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]">
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8 text-xs font-medium text-[#1D1D1F]/80">
+        <a href="sobre.html" class="text-[#141066] font-bold transition-colors">Sobre a Loja</a>
+        <a href="index.html#servicos" class="hover:text-[#1D1D1F] transition-colors">Serviços</a>
+        <a href="index.html#como-funciona" class="hover:text-[#1D1D1F] transition-colors">Como Funciona</a>
+        <a href="index.html#vendas" class="hover:text-[#1D1D1F] transition-colors">Aparelhos à Venda</a>
+        <a href="index.html#localizacao" class="hover:text-[#1D1D1F] transition-colors">Localização</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="index.html#localizacao" class="inline-flex items-center justify-center px-4 py-2 rounded-full text-xs font-semibold bg-[#1D1D1F] text-white hover:bg-[#141066] transition-all shadow-sm">
+          Visitar a Loja
+        </a>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-full text-[#1D1D1F] hover:bg-[#F5F5F7] focus:outline-none" aria-label="Abrir Menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 17h16"/>
+            <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-b border-black/5 px-6 pt-2 pb-6 space-y-3">
+      <a href="sobre.html" class="mobile-link block py-2 text-base font-medium text-[#141066]">Sobre a Loja</a>
+      <a href="index.html#servicos" class="mobile-link block py-2 text-base font-medium text-[#1D1D1F]">Serviços</a>
+      <a href="index.html#como-funciona" class="mobile-link block py-2 text-base font-medium text-[#1D1D1F]">Como Funciona</a>
+      <a href="index.html#vendas" class="mobile-link block py-2 text-base font-medium text-[#1D1D1F]">Aparelhos à Venda</a>
+      <a href="index.html#localizacao" class="mobile-link block py-2 text-base font-medium text-[#1D1D1F]">Onde Estamos</a>
+    </div>
+  </header>
+
+  <main class="pt-24 sm:pt-32">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
+      <div class="max-w-3xl reveal">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F5F5F7] border border-black/5 text-xs font-medium text-[#1D1D1F]">
+          <span class="w-2 h-2 rounded-full bg-[#007A1F]"></span>
+          História e trajetória da Butisom
+        </span>
+
+        <h1 class="mt-6 text-4xl sm:text-6xl lg:text-[64px] font-bold tracking-tight text-[#1D1D1F] leading-[1.06]">
+          Nossa história, nossa equipe e nossa forma de trabalhar.
+        </h1>
+
+        <p class="mt-6 text-lg sm:text-xl text-[#6E6E73] font-normal leading-relaxed max-w-2xl">
+          Texto de apresentação da empresa.
+        </p>
+      </div>
+
+      <!-- Exemplo de texto com imagem -->
+      <div class="mt-14 sm:mt-16 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-apple-lg bg-[#F5F5F7] border border-black/5 p-6 sm:p-10 lg:p-12 apple-shadow">
+          <div class="lg:col-span-7">
+            <div class="h-72 sm:h-96 rounded-apple bg-white border border-black/5 overflow-hidden flex items-center justify-center text-center p-8">
+              <div>
+                <div class="w-16 h-16 rounded-full bg-[#F5F5F7] border border-black/5 mx-auto flex items-center justify-center text-2xl text-[#141066]">
+                  +
+                </div>
+                <p class="mt-4 text-sm font-semibold text-[#1D1D1F]">Exemplo de foto antiga da loja</p>
+                <p class="mt-1 text-xs text-[#6E6E73]">imagem</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <span class="text-xs font-bold uppercase tracking-widest text-[#E61919]">Trajetória da loja</span>
+            <h2 class="mt-2 text-3xl font-bold tracking-tight text-[#1D1D1F]">Como a Butisom começou</h2>
+            <p class="mt-4 text-sm sm:text-base text-[#6E6E73] leading-relaxed">
+              texto sendo trabalhado...
+            </p>
+            <p class="mt-4 text-sm sm:text-base text-[#6E6E73] leading-relaxed">
+              texto sendo trabalhado...
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeria editável -->
+    <section class="bg-[#F5F5F7] py-16 sm:py-24 border-y border-black/[0.04]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl reveal">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#007A1F]">Memórias da Butisom</span>
+          <h2 class="mt-2 text-3xl sm:text-5xl font-bold tracking-tight text-[#1D1D1F]">Fotos antigas e registros da equipe.</h2>
+          <p class="mt-4 text-base text-[#6E6E73]">
+            Exemplos de áreas para inserir fotografias da fachada, da bancada, dos aparelhos atendidos e dos profissionais da loja.
+          </p>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+          <article class="rounded-apple bg-white p-5 border border-black/[0.04] apple-card-hover">
+            <div class="h-52 rounded-2xl bg-[#F5F5F7] border border-black/5 flex items-center justify-center text-center p-6">
+              <div>
+                <p class="text-sm font-bold text-[#1D1D1F]">Exemplo de imagem antiga</p>
+                <p class="mt-1 text-xs text-[#6E6E73]">Fachada ou interior da loja</p>
+              </div>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-[#1D1D1F]">Título do registro</h3>
+            <p class="mt-1 text-sm text-[#6E6E73]">Texto exemplo sobre esta foto.</p>
+          </article>
+
+          <article class="rounded-apple bg-white p-5 border border-black/[0.04] apple-card-hover">
+            <div class="h-52 rounded-2xl bg-[#F5F5F7] border border-black/5 flex items-center justify-center text-center p-6">
+              <div>
+                <p class="text-sm font-bold text-[#1D1D1F]">Exemplo de foto da equipe</p>
+                <p class="mt-1 text-xs text-[#6E6E73]">Equipe antiga ou atual</p>
+              </div>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-[#1D1D1F]">Nossa equipe</h3>
+            <p class="mt-1 text-sm text-[#6E6E73]">Texto exemplo apresentando os profissionais.</p>
+          </article>
+
+          <article class="rounded-apple bg-white p-5 border border-black/[0.04] apple-card-hover">
+            <div class="h-52 rounded-2xl bg-[#F5F5F7] border border-black/5 flex items-center justify-center text-center p-6">
+              <div>
+                <p class="text-sm font-bold text-[#1D1D1F]">Exemplo de foto da bancada</p>
+                <p class="mt-1 text-xs text-[#6E6E73]">Equipamentos e atendimento técnico</p>
+              </div>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-[#1D1D1F]">Trabalho em equipe</h3>
+            <p class="mt-1 text-sm text-[#6E6E73]">Texto exemplo sobre os bastidores da assistência.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipe atual -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center reveal">
+        <div class="lg:col-span-5">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#141066]">Equipe atual</span>
+          <h2 class="mt-2 text-3xl sm:text-5xl font-bold tracking-tight text-[#1D1D1F]">Pessoas por trás da assistência.</h2>
+          <p class="mt-4 text-base text-[#6E6E73] leading-relaxed">
+            Texto exemplo para apresentar a equipe atual da Butisom, suas funções e a experiência de cada profissional.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="h-72 sm:h-96 rounded-apple-lg bg-[#F5F5F7] border border-black/5 flex items-center justify-center text-center p-8">
+            <div>
+              <div class="w-16 h-16 rounded-full bg-white border border-black/5 mx-auto flex items-center justify-center text-2xl text-[#141066]">
+                +
+              </div>
+              <p class="mt-4 text-sm font-semibold text-[#1D1D1F]">Exemplo de foto atual da equipe</p>
+              <p class="mt-1 text-xs text-[#6E6E73]">Foto da equipe</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER MINIMALISTA -->
+  <footer class="bg-white border-t border-black/[0.06]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-1">
+          <span class="w-2.5 h-4 rounded-xs bg-[#E61919] -skew-x-12"></span>
+          <span class="w-2.5 h-4 rounded-xs bg-[#007A1F] -skew-x-12"></span>
+          <span class="w-2.5 h-4 rounded-xs bg-[#141066] -skew-x-12"></span>
+        </div>
+        <span class="font-bold text-sm text-[#1D1D1F]">Butisom Eletrônica</span>
+      </div>
+
+      <p class="text-xs text-[#6E6E73] text-center">
+        © <span id="current-year"></span> Butisom Eletrônica. Assistência Técnica de TV, Micro-ondas e Áudio.
+      </p>
+
+      <div class="flex items-center gap-5 text-xs font-medium text-[#6E6E73]">
+        <a href="index.html#servicos" class="hover:text-[#1D1D1F] transition-colors">Serviços</a>
+        <a href="index.html#localizacao" class="hover:text-[#1D1D1F] transition-colors">Localização</a>
+        <a href="index.html#vendas" class="hover:text-[#1D1D1F] transition-colors">Loja</a>
+      </div>
+    </div>
+    <div class="h-1 w-full rgb-line"></div>
+  </footer>
+
+  <script src="js/sobre.js" defer></script>
+</body>
+</html>
